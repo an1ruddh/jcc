@@ -5,7 +5,7 @@ import { siteConfig, services, testimonials } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Best Cardiologist in Jaipur | Dr. Raghvendra Choudhary",
-  description: "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 25+ years experience & 10,000+ angioplasties. Book appointment: +91 8107667788.",
+  description: "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 15+ years experience & 8,000+  angioplasties. Book appointment: +91 8107667788.",
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
 };
 
@@ -28,7 +28,7 @@ export default function HomePage() {
             </h1>
             <p className="text-ink-soft leading-relaxed max-w-md mb-10 text-base">
               Dr. Raghvendra Choudhary has spent 25 years making the decision
-              that saves lives. DM Cardiology. 10,000+ angioplasties.
+              that saves lives. DM Cardiology. 8,000+ angioplasties.
               The most trusted cardiac name in Rajasthan.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -75,8 +75,8 @@ export default function HomePage() {
           <div className="lg:col-span-1">
             <p className="section-label mb-6">The Doctor</p>
             {/* Avatar monogram — oversized, intentional */}
-            <div className="w-24 h-24 bg-crimson flex items-center justify-center mb-6">
-              <span className="font-display text-4xl font-bold text-white">RC</span>
+            <div className="w-28 h-36 bg-bone-dark border border-bone-border mb-6 relative overflow-hidden flex items-center justify-center">
+              <span className="font-display text-3xl font-bold text-crimson/30">RC</span> {/* Replace with: <Image src="/doctor-photo.jpg" alt="Dr. Raghvendra Choudhary" fill className="object-cover object-top" /> */}
             </div>
             <h2 className="display-heading text-3xl mb-1">Dr. Raghvendra<br />Choudhary</h2>
             <p className="text-crimson text-sm tracking-wide mb-6">DM Cardiology · SMS Medical College</p>

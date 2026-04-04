@@ -1,27 +1,73 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 import { doctorProfile, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Dr. Raghvendra Choudhary – DM Cardiology | About",
-  description: "Dr. Raghvendra Choudhary — DM Cardiology, SMS Medical College. 25+ years, 15,000+ cases, 10,000+ angioplasties. Rajasthan's top interventional cardiologist.",
+  description: "Dr. Raghvendra Choudhary — DM Cardiology, SMS Medical College. 15+ years, 15,000+ cases, 8,000+ angioplasties. Rajasthan's top interventional cardiologist.",
   alternates: { canonical: "https://jaipurcardiaccentre.com/about" },
 };
 
 export default function AboutPage() {
   return (
     <div className="bg-bone">
-      {/* Header */}
-      <section className="section-container pt-16 pb-12 border-b border-bone-border">
-        <p className="section-label mb-4">The Doctor</p>
-        <div className="grid lg:grid-cols-2 gap-10 items-end">
-          <h1 className="display-heading text-5xl md:text-6xl">
-            Dr. Raghvendra<br />Choudhary
-          </h1>
-          <div>
-            <p className="text-crimson tracking-wide text-sm mb-3">DM Cardiology · Senior Interventional Cardiologist</p>
-            <p className="text-ink-soft text-sm leading-relaxed">{doctorProfile.bio}</p>
+
+      {/* Hero — doctor photo + name */}
+      <section className="section-container pt-16 pb-0 border-b border-bone-border">
+        <p className="section-label mb-8">The Doctor</p>
+        <div className="grid lg:grid-cols-2 gap-0 items-end">
+
+          {/* Left — name + bio */}
+          <div className="pb-16 lg:pr-16">
+            <h1 className="display-heading text-5xl md:text-6xl mb-4">
+              Dr. Raghvendra<br />Choudhary
+            </h1>
+            <p className="text-crimson text-sm tracking-wide mb-6">
+              DM Cardiology · Senior Interventional Cardiologist
+            </p>
+            <p className="text-ink-soft text-sm leading-relaxed max-w-md">
+              {doctorProfile.bio}
+            </p>
+          </div>
+
+          {/* Right — doctor photo */}
+          <div className="relative border-l border-bone-border">
+            {/* 
+              PHOTO PLACEMENT:
+              Replace /doctor-photo.jpg with your uploaded image.
+              Recommended: portrait photo, min 600×750px, ideally on white/light background.
+              Place the file at: public/doctor-photo.jpg
+            */}
+            <div className="relative w-full aspect-[4/5] bg-bone-dark overflow-hidden">
+              {/* Placeholder shown until real photo is added */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-8">
+                <div className="w-24 h-24 bg-crimson flex items-center justify-center">
+                  <span className="font-display text-4xl font-bold text-white">RC</span>
+                </div>
+                <p className="text-xs text-ink-muted leading-relaxed max-w-xs">
+                  Replace <code className="bg-bone-border px-1 py-0.5 text-crimson">/public/doctor-photo.jpg</code> with the doctor's photo to display it here.
+                </p>
+              </div>
+
+              {/* Uncomment this once you add the photo: */}
+              {/* 
+              <Image
+                src="/doctor-photo.jpg"
+                alt="Dr. Raghvendra Choudhary — Senior Interventional Cardiologist, Jaipur"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              */}
+            </div>
+
+            {/* Credential badge overlaid on photo */}
+            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm border border-bone-border p-4">
+              <div className="text-xs text-ink-muted tracking-widest uppercase mb-1">Credentials</div>
+              <div className="font-semibold text-ink text-sm">MBBS · MD · DM Cardiology</div>
+              <div className="text-xs text-crimson mt-0.5">SMS Medical College, Jaipur</div>
+            </div>
           </div>
         </div>
       </section>
@@ -29,6 +75,7 @@ export default function AboutPage() {
       {/* Bio + credentials */}
       <section className="section-container section-py">
         <div className="grid lg:grid-cols-3 gap-16">
+
           {/* Credentials sidebar */}
           <div className="space-y-8">
             <div>

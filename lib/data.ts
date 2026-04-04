@@ -3,7 +3,7 @@ export const siteConfig = {
   doctor: "Dr. Raghvendra Choudhary",
   tagline: "Expert Cardiac Care You Can Trust",
   description:
-    "Jaipur's leading cardiologist with 25+ years of experience, 15,000+ cardiac cases, and 10,000+ successful angioplasties. DM Cardiology from SMS Medical College.",
+    "Jaipur's leading cardiologist with 15+ years of experience, 15,000+ cardiac cases, and 8,000+ successful angioplasties. DM Cardiology from SMS Medical College.",
   phone1: "+91 8107667788",
   phone2: "+91 9414262690",
   email: "drraghven10@gmail.com",
@@ -14,10 +14,10 @@ export const siteConfig = {
     sunday: "10:00 AM – 2:00 PM (Emergency Only)",
   },
   stats: [
-    { value: "25+", label: "Years Experience" },
+    { value: "15+", label: "Years Experience" },
     { value: "15,000+", label: "Cardiac Cases" },
-    { value: "10,000+", label: "Angioplasties" },
-    { value: "98%", label: "Success Rate" },
+    { value: "8,000+ ", label: "Angioplasties" },
+    { value: "99%", label: "Success Rate" },
   ],
   social: {
     whatsapp: "918107667788",
@@ -31,9 +31,9 @@ export const services = [
     title: "Coronary Angioplasty (PCI)",
     shortDesc: "Advanced balloon & stent procedures to open blocked arteries.",
     description:
-      "Percutaneous Coronary Intervention (PCI) is a minimally invasive procedure to treat narrowed or blocked coronary arteries. Dr. Choudhary has performed 10,000+ successful angioplasties using latest drug-eluting stents.",
+      "Percutaneous Coronary Intervention (PCI) is a minimally invasive procedure to treat narrowed or blocked coronary arteries. Dr. Choudhary has performed 8,000+ successful angioplasties using latest drug-eluting stents.",
     price: "Contact for Pricing",
-    badge: "10,000+ Done",
+    badge: "8,000+ Done",
   },
   {
     id: "coronary-angiography",
@@ -228,10 +228,10 @@ export const doctorProfile = {
   title: "Senior Interventional Cardiologist",
   qualifications: ["MBBS", "MD (Medicine)", "DM Cardiology"],
   institution: "SMS Medical College, Jaipur",
-  experience: "25+ Years",
+  experience: "15+ years",
   bio: "Dr. Raghvendra Choudhary is one of Rajasthan's most experienced interventional cardiologists, with over 25 years of dedicated practice in cardiac care. Having trained at the prestigious SMS Medical College, Jaipur, he has built a reputation for clinical excellence, patient-centred care, and outstanding procedural outcomes.",
   bio2:
-    "Over his illustrious career, Dr. Choudhary has treated more than 15,000 cardiac cases and performed over 10,000 coronary angioplasties — a testament to his skill and the trust patients across Rajasthan place in him. He is known for his calm demeanour, clear communication, and commitment to making advanced cardiac care accessible.",
+    "Over his illustrious career, Dr. Choudhary has treated more than 15,000 cardiac cases and performed over 8,000 coronary angioplasties — a testament to his skill and the trust patients across Rajasthan place in him. He is known for his calm demeanour, clear communication, and commitment to making advanced cardiac care accessible.",
   expertise: [
     "Interventional Cardiology",
     "Complex PCI & Angioplasty",
@@ -241,19 +241,18 @@ export const doctorProfile = {
     "Echocardiography",
   ],
   achievements: [
-    "10,000+ Coronary Angioplasties Performed",
-    "25+ Years of Continuous Practice",
+    "8,000+ Coronary Angioplasties Performed",
+    "15+ years of Continuous Practice",
     "DM Cardiology – SMS Medical College",
     "15,000+ Cardiac Cases Managed",
     "Pioneer of Advanced PCI in Rajasthan",
   ],
   timeline: [
-    { year: "1999", event: "MBBS – SMS Medical College, Jaipur" },
+    { year: "1997", event: "MBBS – SMS Medical College, Jaipur" },
     { year: "2002", event: "MD Medicine – SMS Medical College, Jaipur" },
-    { year: "2005", event: "DM Cardiology – SMS Medical College, Jaipur" },
-    { year: "2005", event: "Founded Jaipur Cardiac Centre" },
-    { year: "2010", event: "Reached 5,000 Angioplasty Milestone" },
-    { year: "2018", event: "10,000+ Cardiac Cases Treated" },
-    { year: "2023", event: "10,000+ Angioplasties Milestone" },
+    { year: "2013", event: "DM Cardiology – SMS Medical College, Jaipur" },
+    { year: "2015", event: "Founded Jaipur Cardiac Centre" },
+    { year: "2018", event: "8,000+ Cardiac Cases Treated" },
+    { year: "2023", event: "8,000+ Angioplasties Milestone" },
   ],
 };

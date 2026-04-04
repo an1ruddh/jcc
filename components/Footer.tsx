@@ -14,7 +14,7 @@ export function Footer() {
             </div>
             <div className="text-xs text-white/50 mb-5 tracking-wide">Dr. Raghvendra Choudhary</div>
             <p className="text-sm text-white/60 leading-relaxed">
-              25+ years of trusted cardiac care. 15,000+ cases. 10,000+ angioplasties.
+              15+ years of trusted cardiac care. 15,000+ cases. 8000+ angioplasties.
               Rajasthan's most experienced interventional cardiologist.
             </p>
           </div>

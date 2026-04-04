@@ -187,7 +187,7 @@ export default function ContactPage() {
               <div className="font-semibold text-sm text-ink">Find Us</div>
               <div className="text-xs text-ink-muted mt-0.5">{siteConfig.address}</div>
             </div>
-            <a href="https://maps.google.com/?q=52+Janak+Marg+Hanuman+Nagar+Extension+Jaipur+Rajasthan+302012"
+            <a href="https://maps.google.com/?q=52+Janak+Marg+Hanuman+Nagar+Extension+Khatipura+Jaipur+Rajasthan+302012"
               target="_blank" rel="noopener noreferrer"
               className="text-xs text-crimson hover:underline">Open in Maps →</a>
           </div>
