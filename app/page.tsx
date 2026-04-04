@@ -1,211 +1,248 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Heart, Phone, ChevronRight, Star, CheckCircle, Award, Activity, Shield } from "lucide-react";
+import { Phone, ArrowRight, Star } from "lucide-react";
 import { siteConfig, services, testimonials } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Best Cardiologist in Jaipur | Dr. Raghvendra Choudhary",
-  description:
-    "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 25+ years experience & 10,000+ angioplasties. Book appointment: +91 8107667788.",
+  description: "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 25+ years experience & 10,000+ angioplasties. Book appointment: +91 8107667788.",
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
 };
 
 export default function HomePage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="section-container section-py relative">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
-              <Heart size={14} className="text-red-400" />
-              Rajasthan's Most Trusted Cardiac Care Centre
-            </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Expert Heart Care<br />You Can <span className="text-teal-300">Trust</span>
+    <div className="bg-bone">
+
+      {/* ── HERO ── */}
+      <section className="section-container pt-16 pb-0 md:pt-24">
+        {/* Section label */}
+        <p className="section-label mb-8">Jaipur · Rajasthan · Since 2005</p>
+
+        {/* Split layout */}
+        <div className="grid lg:grid-cols-2 gap-0 items-end">
+          <div className="pb-16">
+            <h1 className="display-heading text-5xl md:text-6xl xl:text-7xl mb-8 max-w-lg">
+              The Heart Demands<br />
+              <em className="text-crimson not-italic">the Best</em><br />
+              Hands.
             </h1>
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-2xl">
-              Dr. Raghvendra Choudhary — DM Cardiology, SMS Medical College — brings 25+ years of interventional cardiology expertise to Jaipur, with 15,000+ cardiac cases and 10,000+ successful angioplasties.
+            <p className="text-ink-soft leading-relaxed max-w-md mb-10 text-base">
+              Dr. Raghvendra Choudhary has spent 25 years making the decision
+              that saves lives. DM Cardiology. 10,000+ angioplasties.
+              The most trusted cardiac name in Rajasthan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${siteConfig.phone1}`} className="btn-accent">
-                <Phone size={18} /> Book Appointment Now
+            <div className="flex flex-wrap gap-3">
+              <a href={`tel:${siteConfig.phone1}`} className="btn-primary">
+                <Phone size={15} /> Book Appointment
               </a>
-              <Link href="/services" className="border-2 border-white/50 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2">
-                View Our Services <ChevronRight size={18} />
+              <Link href="/about" className="btn-ghost">
+                Meet Dr. Choudhary <ArrowRight size={15} />
               </Link>
             </div>
+          </div>
 
-            <div className="mt-10 flex flex-wrap gap-5">
-              {[
-                { icon: <CheckCircle size={16} />, text: "DM Cardiology Specialist" },
-                { icon: <Award size={16} />, text: "25+ Years Experience" },
-                { icon: <Shield size={16} />, text: "98% Success Rate" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2 text-sm text-blue-100">
-                  <span className="text-teal-300">{item.icon}</span>
-                  {item.text}
+          {/* Stats column — numbers as art */}
+          <div className="border-l border-bone-border pl-10 pb-16 hidden lg:block">
+            <div className="space-y-10">
+              {siteConfig.stats.map((s, i) => (
+                <div key={s.label} className={i !== 0 ? "pt-10 border-t border-bone-border" : ""}>
+                  <div className="stat-number">{s.value}</div>
+                  <div className="text-xs tracking-widest uppercase text-ink-muted mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Stats */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="section-container py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {siteConfig.stats.map((s) => (
-              <div key={s.label} className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-blue-800 mb-1">{s.value}</div>
-                <div className="text-sm text-gray-500 font-medium">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Preview */}
-      <section className="bg-gray-50 section-py">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-blue-900 mb-4">Cardiac Services We Offer</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">From diagnosis to intervention and long-term management — comprehensive cardiac care under one roof.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.slice(0, 4).map((s) => (
-              <div key={s.id} className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all group">
-                <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                  <Activity size={22} className="text-blue-700" />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2 text-sm leading-snug">{s.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{s.shortDesc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/services" className="btn-outline">View All Services <ChevronRight size={17} /></Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Doctor snippet */}
-      <section className="section-py bg-white">
-        <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-xs font-semibold mb-5">
-                <Award size={13} /> DM Cardiology | SMS Medical College
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-blue-900 mb-5">
-                Dr. Raghvendra Choudhary
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-5">
-                With over 25 years at the forefront of interventional cardiology, Dr. Choudhary has earned the trust of patients across Rajasthan and beyond. His compassionate approach combined with technical precision has made him one of the region's most sought-after cardiologists.
-              </p>
-              <ul className="space-y-2 mb-7">
-                {["MBBS, MD Medicine, DM Cardiology", "15,000+ Cardiac Cases Treated", "10,000+ Successful Angioplasties", "Pioneer of Advanced PCI in Rajasthan"].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <CheckCircle size={16} className="text-teal-600 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/about" className="btn-primary">Learn More About the Doctor <ChevronRight size={17} /></Link>
+        {/* Mobile stats — horizontal scroll strip */}
+        <div className="lg:hidden grid grid-cols-2 gap-0 border-t border-bone-border">
+          {siteConfig.stats.map((s, i) => (
+            <div key={s.label} className={`py-7 px-2 ${i % 2 !== 0 ? "border-l border-bone-border pl-6" : ""} ${i >= 2 ? "border-t border-bone-border" : ""}`}>
+              <div className="stat-number text-3xl">{s.value}</div>
+              <div className="text-xs tracking-widest uppercase text-ink-muted mt-1">{s.label}</div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8 border border-blue-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-blue-700 rounded-full flex items-center justify-center text-white text-2xl font-bold">RC</div>
-                <div>
-                  <div className="font-bold text-gray-900">Dr. Raghvendra Choudhary</div>
-                  <div className="text-sm text-blue-700">DM Cardiology</div>
-                  <div className="flex mt-1 gap-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={13} className="fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                </div>
-              </div>
-              <blockquote className="text-gray-700 text-sm leading-relaxed italic">
-                "My mission is to deliver the highest standard of cardiac care to every patient — with honesty, compassion, and the latest evidence-based treatments. Heart disease is treatable. Early detection saves lives."
-              </blockquote>
-              <div className="mt-4 text-sm font-medium text-blue-800">— Dr. Raghvendra Choudhary</div>
+      {/* ── RULED DIVIDER ── */}
+      <div className="section-container"><div className="ruled" /></div>
+
+      {/* ── DOCTOR PROFILE ── */}
+      <section className="section-container section-py">
+        <div className="grid lg:grid-cols-3 gap-16 items-start">
+          {/* Left: credentials block */}
+          <div className="lg:col-span-1">
+            <p className="section-label mb-6">The Doctor</p>
+            {/* Avatar monogram — oversized, intentional */}
+            <div className="w-24 h-24 bg-crimson flex items-center justify-center mb-6">
+              <span className="font-display text-4xl font-bold text-white">RC</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials preview */}
-      <section className="bg-gray-50 section-py">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-blue-900 mb-4">What Patients Say</h2>
-            <p className="text-gray-600">Real stories from real patients who trusted Dr. Choudhary with their heart health.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.slice(0, 3).map((t) => (
-              <div key={t.id} className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(t.rating)].map((_, i) => <Star key={i} size={15} className="fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-sm">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm text-gray-900">{t.name}</div>
-                    <div className="text-xs text-gray-500">{t.condition} · {t.location}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/testimonials" className="btn-outline">Read All Testimonials <ChevronRight size={17} /></Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="section-py bg-white">
-        <div className="section-container">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="font-display text-3xl font-bold text-blue-900 text-center mb-10">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                { q: "How do I book an appointment?", a: "Call us at +91 8107667788 or +91 9414262690. You can also WhatsApp us or fill out the contact form. We offer same-day appointments for urgent cases." },
-                { q: "What should I bring to my first consultation?", a: "Please bring previous ECGs, echo reports, blood test results and a list of current medications. If you have any angiography reports, bring those too." },
-                { q: "Does Dr. Choudhary perform emergency procedures?", a: "Yes. Dr. Choudhary provides emergency cardiac care. For heart attack emergencies, call 108 or rush directly to the nearest hospital with a cath lab — time is critical." },
-                { q: "What are the consultation fees?", a: "Consultation fees start at ₹500. Procedure costs vary. Please call us for current pricing — we strive to make cardiac care affordable for all." },
-                { q: "Is the clinic accessible for elderly patients?", a: "Yes, our centre at 52 Janak Marg is accessible and equipped for elderly and differently-abled patients. Wheelchair assistance is available." },
-              ].map((faq, i) => (
-                <div key={i} className="border border-gray-200 rounded-xl p-5">
-                  <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+            <h2 className="display-heading text-3xl mb-1">Dr. Raghvendra<br />Choudhary</h2>
+            <p className="text-crimson text-sm tracking-wide mb-6">DM Cardiology · SMS Medical College</p>
+            <div className="space-y-2 text-sm text-ink-soft border-t border-bone-border pt-6">
+              {["MBBS · MD Medicine · DM Cardiology", "Interventional Cardiology", "25 Years in Practice", "Jaipur, Rajasthan"].map(c => (
+                <div key={c} className="flex items-start gap-2">
+                  <span className="text-crimson mt-0.5 text-xs">—</span>
+                  <span>{c}</span>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-blue-800 text-white py-16">
-        <div className="section-container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Don't Wait — Your Heart Can't</h2>
-          <p className="text-blue-200 max-w-xl mx-auto mb-8">Early diagnosis and treatment can prevent a cardiac emergency. Book a consultation with Dr. Choudhary today.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${siteConfig.phone1}`} className="btn-accent">
-              <Phone size={18} /> Call Now: {siteConfig.phone1}
-            </a>
-            <Link href="/contact" className="border-2 border-white/50 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center gap-2">
-              Send a Message
+            <Link href="/about" className="btn-ghost mt-8 text-xs">
+              Full Profile <ArrowRight size={13} />
             </Link>
           </div>
+
+          {/* Right: quote + philosophy */}
+          <div className="lg:col-span-2 lg:border-l lg:border-bone-border lg:pl-16">
+            <p className="section-label mb-8">Philosophy</p>
+            <blockquote className="display-heading text-3xl md:text-4xl text-ink mb-10 leading-snug">
+              "Every patient who walks in is someone's entire world.
+              I treat them that way."
+            </blockquote>
+            <p className="text-ink-soft leading-relaxed text-base mb-6 max-w-xl">
+              Over 15,000 cardiac cases across Rajasthan. Not a number to impress —
+              a record of trust built one patient at a time, in a city where
+              advanced cardiac care was once inaccessible.
+            </p>
+            <p className="text-ink-soft leading-relaxed text-base max-w-xl">
+              Dr. Choudhary pioneered complex interventional procedures in Jaipur,
+              bringing catheterisation lab expertise that patients previously had to
+              travel to Delhi or Mumbai for.
+            </p>
+          </div>
         </div>
       </section>
-    </>
+
+      <div className="section-container"><div className="ruled" /></div>
+
+      {/* ── SERVICES ── */}
+      <section className="section-container section-py">
+        <div className="flex items-end justify-between mb-14">
+          <div>
+            <p className="section-label mb-3">What We Do</p>
+            <h2 className="display-heading text-4xl md:text-5xl max-w-sm">
+              Cardiac Services
+            </h2>
+          </div>
+          <Link href="/services" className="btn-ghost hidden md:inline-flex text-xs">
+            All Services <ArrowRight size={13} />
+          </Link>
+        </div>
+
+        {/* Services as editorial list — not cards */}
+        <div className="divide-y divide-bone-border">
+          {services.slice(0, 6).map((s, i) => (
+            <div key={s.id}
+              className="group flex items-center justify-between py-6 hover:bg-white transition-colors px-0 hover:px-4 duration-200 -mx-0 hover:-mx-4 cursor-default">
+              <div className="flex items-start gap-6">
+                <span className="font-mono text-xs text-ink-muted mt-1 w-5 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-ink group-hover:text-crimson transition-colors mb-0.5">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-ink-muted">{s.shortDesc}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 shrink-0 ml-4">
+                <span className="text-xs text-crimson bg-crimson-light px-2 py-1 hidden sm:block">{s.badge}</span>
+                <ArrowRight size={16} className="text-bone-border group-hover:text-crimson transition-colors" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <Link href="/services" className="btn-ghost mt-8 md:hidden inline-flex text-xs">
+          All Services <ArrowRight size={13} />
+        </Link>
+      </section>
+
+      <div className="section-container"><div className="ruled" /></div>
+
+      {/* ── TESTIMONIALS ── */}
+      <section className="section-container section-py">
+        <p className="section-label mb-3">Patient Voices</p>
+        <h2 className="display-heading text-4xl md:text-5xl mb-14 max-w-sm">
+          In Their Words
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-bone-border border border-bone-border">
+          {testimonials.slice(0, 3).map((t) => (
+            <div key={t.id} className="p-8 bg-white">
+              <div className="flex gap-0.5 mb-5">
+                {[...Array(t.rating)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-gold text-gold" />
+                ))}
+              </div>
+              <p className="text-ink-soft text-sm leading-relaxed mb-7 italic">
+                "{t.text}"
+              </p>
+              <div className="ruled pt-5">
+                <div className="font-semibold text-sm text-ink">{t.name}</div>
+                <div className="text-xs text-ink-muted mt-0.5">{t.condition} · {t.location}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <Link href="/testimonials" className="btn-ghost mt-6 text-xs">
+          Read All Stories <ArrowRight size={13} />
+        </Link>
+      </section>
+
+      <div className="section-container"><div className="ruled" /></div>
+
+      {/* ── FAQ ── */}
+      <section className="section-container section-py">
+        <div className="grid lg:grid-cols-3 gap-16">
+          <div>
+            <p className="section-label mb-3">Questions</p>
+            <h2 className="display-heading text-4xl mb-4">Common<br />Questions</h2>
+            <p className="text-ink-muted text-sm">Everything you need to know before your first visit.</p>
+          </div>
+          <div className="lg:col-span-2 divide-y divide-bone-border">
+            {[
+              { q: "How do I book an appointment?", a: "Call +91 8107667788 or +91 9414262690. WhatsApp works too. We offer same-day appointments for urgent cases." },
+              { q: "What should I bring to my first consultation?", a: "Previous ECGs, echo reports, blood tests, and a list of current medications. Angiography reports if you have them." },
+              { q: "Does Dr. Choudhary handle emergencies?", a: "Yes. For heart attack emergencies, call 108 or rush to the nearest cath lab hospital. Time is muscle." },
+              { q: "What are the consultation fees?", a: "Consultation starts at ₹500. Procedure costs vary — call us for current pricing. We make cardiac care accessible." },
+              { q: "Is the clinic accessible for elderly patients?", a: "Yes. Our Janak Marg centre is fully accessible. Wheelchair assistance available." },
+            ].map((faq) => (
+              <div key={faq.q} className="py-7">
+                <h3 className="font-semibold text-ink mb-2 text-sm">{faq.q}</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA STRIP ── */}
+      <section className="bg-crimson text-white">
+        <div className="section-container py-16">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div>
+              <p className="section-label text-red-300 mb-3">Don't Wait</p>
+              <h2 className="display-heading text-white text-4xl md:text-5xl max-w-sm">
+                Your heart has been patient enough.
+              </h2>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <a href={`tel:${siteConfig.phone1}`}
+                className="inline-flex items-center justify-center gap-2 bg-white text-crimson font-semibold text-sm px-6 py-3 hover:bg-red-50 transition-colors">
+                <Phone size={15} /> {siteConfig.phone1}
+              </a>
+              <Link href="/contact"
+                className="inline-flex items-center justify-center gap-2 border border-white/40 text-white text-sm font-medium px-6 py-3 hover:bg-white/10 transition-colors">
+                Send a Message
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

@@ -7,7 +7,7 @@ export const siteConfig = {
   phone1: "+91 8107667788",
   phone2: "+91 9414262690",
   email: "drraghven10@gmail.com",
-  address: "52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan 302012",
+  address: "52 Janak Marg, Hanuman Nagar Extension, Khatipura, Jaipur, Rajasthan 302012",
   hours: {
     weekdays: "9:00 AM – 7:00 PM",
     saturday: "9:00 AM – 5:00 PM",

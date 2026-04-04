@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, Tag, ArrowLeft, Phone } from "lucide-react";
+import { ArrowLeft, Phone } from "lucide-react";
 import { blogPosts, siteConfig } from "@/lib/data";
 
 type Props = { params: { slug: string } };
@@ -17,7 +17,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `https://jaipurcardiaccentre.com/blog/${post.id}` },
-    openGraph: { title: post.title, description: post.excerpt, type: "article", publishedTime: post.date },
   };
 }
 
@@ -26,52 +25,59 @@ export default function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <>
-      <section className="bg-gradient-to-r from-blue-900 to-teal-700 text-white py-14">
-        <div className="section-container">
-          <Link href="/blog" className="inline-flex items-center gap-1 text-sm text-blue-200 hover:text-white mb-6">
-            <ArrowLeft size={15} /> Back to Blog
-          </Link>
-          <div className="flex items-center gap-3 text-xs text-blue-200 mb-4">
-            <span className="flex items-center gap-1"><Tag size={11} /> {post.category}</span>
-            <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
-            <span>{post.date}</span>
-          </div>
-          <h1 className="font-display text-3xl md:text-4xl font-bold max-w-3xl">{post.title}</h1>
-          <div className="mt-4 text-blue-200 text-sm">By Dr. Raghvendra Choudhary, DM Cardiology</div>
+    <div className="bg-bone">
+      <section className="section-container pt-12 pb-12 border-b border-bone-border">
+        <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-crimson transition-colors mb-8">
+          <ArrowLeft size={14} /> Back to Blog
+        </Link>
+        <div className="flex items-center gap-3 mb-5">
+          <span className="section-label">{post.category}</span>
+          <span className="text-ink-muted text-xs">·</span>
+          <span className="text-xs text-ink-muted">{post.readTime}</span>
+          <span className="text-ink-muted text-xs">·</span>
+          <span className="text-xs text-ink-muted">{post.date}</span>
         </div>
+        <h1 className="display-heading text-4xl md:text-5xl max-w-2xl mb-6">{post.title}</h1>
+        <p className="text-sm text-ink-muted">By Dr. Raghvendra Choudhary, DM Cardiology</p>
       </section>
 
-      <section className="section-py bg-white">
-        <div className="section-container">
-          <div className="max-w-3xl mx-auto">
-            <div className="prose prose-blue max-w-none text-gray-700 leading-relaxed">
-              {post.content.split("\n\n").map((para, i) => {
-                if (para.startsWith("**") && para.endsWith("**")) {
-                  return <h3 key={i} className="font-bold text-gray-900 text-lg mt-6 mb-2">{para.replace(/\*\*/g, "")}</h3>;
-                }
-                if (para.startsWith("- ")) {
-                  const items = para.split("\n").filter(l => l.startsWith("- "));
-                  return <ul key={i} className="list-disc pl-5 space-y-1 mb-4">{items.map((item, j) => (
-                    <li key={j} className="text-sm">
-                      {item.slice(2).split("**").map((s, k) => k % 2 === 1 ? <strong key={k}>{s}</strong> : s)}
+      <section className="section-container py-16">
+        <div className="max-w-2xl">
+          {post.content.split("\n\n").map((para, i) => {
+            if (para.startsWith("**") && para.endsWith("**")) {
+              return <h2 key={i} className="font-semibold text-ink text-lg mt-8 mb-3">{para.replace(/\*\*/g, "")}</h2>;
+            }
+            if (para.startsWith("- ")) {
+              const items = para.split("\n").filter(l => l.startsWith("- "));
+              return (
+                <ul key={i} className="space-y-2 mb-6 pl-0">
+                  {items.map((item, j) => (
+                    <li key={j} className="flex gap-3 text-sm text-ink-soft">
+                      <span className="text-crimson shrink-0 mt-0.5">—</span>
+                      <span>{item.slice(2).split("**").map((s, k) => k % 2 === 1 ? <strong key={k} className="text-ink">{s}</strong> : s)}</span>
                     </li>
-                  ))}</ul>;
-                }
-                return <p key={i} className="mb-4 text-sm leading-relaxed">{para.split("**").map((s, k) => k % 2 === 1 ? <strong key={k}>{s}</strong> : s)}</p>;
-              })}
-            </div>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <p key={i} className="text-ink-soft text-sm leading-relaxed mb-5">
+                {para.split("**").map((s, k) => k % 2 === 1 ? <strong key={k} className="text-ink font-semibold">{s}</strong> : s)}
+              </p>
+            );
+          })}
 
-            <div className="mt-12 bg-blue-50 rounded-xl p-7 border border-blue-100 text-center">
-              <h3 className="font-display font-bold text-blue-900 text-xl mb-3">Have Cardiac Concerns?</h3>
-              <p className="text-gray-600 text-sm mb-5">Don't wait. Book a consultation with Dr. Raghvendra Choudhary today.</p>
-              <a href={`tel:${siteConfig.phone1}`} className="btn-accent">
-                <Phone size={16} /> Call {siteConfig.phone1}
-              </a>
-            </div>
+          <div className="ruled mt-12 pt-10">
+            <p className="section-label mb-4">Consult the Expert</p>
+            <h3 className="display-heading text-2xl text-ink mb-4">
+              Have questions about your heart health?
+            </h3>
+            <a href={`tel:${siteConfig.phone1}`} className="btn-primary text-sm">
+              <Phone size={14} /> Call Dr. Choudhary
+            </a>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
