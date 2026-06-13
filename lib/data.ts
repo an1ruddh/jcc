@@ -355,14 +355,14 @@ export const videos = [
     id: "heart-attack-signs",
     title: "When Should You Get Your Heart Checked?",
     description: "Dr. Choudhary explains the right time to see a cardiologist — before it's an emergency.",
-    src: "/videos/IMG_7262.MOV",
+    src: "https://youtu.be/6DTWBxE8-2k",
     poster: "",
   },
   {
     id: "chest-pain-vs-gas",
     title: "Chest Pain or Gas? How to Tell the Difference",
     description: "Most heart attack survivors thought it was just gas. Dr. Choudhary explains the critical signs that separate cardiac pain from indigestion.",
-    src: "/videos/IMG_7258.MOV",
+    src: "https://youtu.be/FNRacn5I3sE",
     poster: "",
   },
 ];

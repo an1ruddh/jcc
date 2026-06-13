@@ -3,6 +3,19 @@ import { useState } from "react";
 import { Play, X, Video } from "lucide-react";
 import { videos } from "@/lib/data";
 
+function getYouTubeId(url: string): string | null {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|watch\?v=))([^&\s?]+)/);
+  return match?.[1] ?? null;
+}
+
+function isYouTube(url: string): boolean {
+  return /youtube\.com|youtu\.be/.test(url);
+}
+
+function getYouTubeThumb(id: string): string {
+  return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+}
+
 export function VideoSection() {
   const [active, setActive] = useState<typeof videos[number] | null>(null);
 
@@ -21,6 +34,9 @@ export function VideoSection() {
                   {v.poster ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={v.poster} alt={v.title} className="absolute inset-0 w-full h-full object-cover opacity-80" />
+                  ) : isYouTube(v.src) ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={getYouTubeThumb(getYouTubeId(v.src)!)} alt={v.title} className="absolute inset-0 w-full h-full object-cover opacity-80" />
                   ) : (
                     <video src={v.src} className="absolute inset-0 w-full h-full object-cover opacity-80" muted preload="metadata" />
                   )}
@@ -58,13 +74,23 @@ export function VideoSection() {
               </button>
             </div>
             <div className="aspect-video bg-black rounded-lg overflow-hidden">
-              <video
-                src={active.src}
-                poster={active.poster || undefined}
-                controls
-                autoPlay
-                className="w-full h-full"
-              />
+              {isYouTube(active.src) ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${getYouTubeId(active.src)}?autoplay=1`}
+                  title={active.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <video
+                  src={active.src}
+                  poster={active.poster || undefined}
+                  controls
+                  autoPlay
+                  className="w-full h-full"
+                />
+              )}
             </div>
           </div>
         </div>
