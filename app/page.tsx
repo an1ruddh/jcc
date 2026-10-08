@@ -13,8 +13,8 @@ import { ProcedureGallery } from "@/components/ProcedureGallery";
 import { VideoSection } from "@/components/VideoSection";
 
 export const metadata: Metadata = {
-  title: "Best Cardiologist in Jaipur | Dr. Raghvendra Choudhary",
-  description: "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 25+ years experience & 10,000+ angioplasties. Book appointment: +91 8107667788.",
+  title: "Cardiologist in Jaipur | Dr. Raghvendra Choudhary | Jaipur Cardiac Centre",
+  description: "Jaipur Cardiac Centre — Dr. Raghvendra Choudhary, DM Cardiology with 25+ years experience & 15,000+ angioplasties. Book appointment: +91 8107667788.",
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
 };
 
@@ -48,7 +48,7 @@ const faqSchema = {
       name: "What heart conditions does Dr. Raghvendra Choudhary treat?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dr. Choudhary treats all types of cardiac conditions including coronary artery disease, heart failure, arrhythmias, hypertension, valvular heart disease, and high cholesterol. He has successfully managed 15,000+ cardiac cases with a 98% success rate.",
+        text: "Dr. Choudhary treats all types of cardiac conditions including coronary artery disease, heart failure, arrhythmias, hypertension, valvular heart disease, and high cholesterol. He has successfully managed 15,000+ cardiac cases.",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqSchema = {
       name: "Do you handle emergency cardiac cases?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, we handle cardiac emergencies including heart attacks, unstable angina, and acute heart failure. For emergencies, call +91 8107667788 immediately. Dr. Choudhary has performed over 10,000 emergency angioplasties with outstanding outcomes.",
+        text: "Yes, we handle cardiac emergencies including heart attacks, unstable angina, and acute heart failure. For emergencies, call +91 8107667788 immediately. Dr. Choudhary has performed over 15,000 emergency angioplasties with outstanding outcomes.",
       },
     },
     {
@@ -80,7 +80,7 @@ const faqSchema = {
       name: "How do I book an appointment with Dr. Raghvendra Choudhary?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can book by calling +91 8107667788 or +91 9414262690, sending a message through the contact form on this website, or chatting via WhatsApp. We respond within a few hours on working days.",
+        text: "You can book by calling +91 8107667788, sending a message through the contact form on this website, or chatting via WhatsApp. We respond within a few hours on working days.",
       },
     },
   ],
@@ -99,8 +99,8 @@ export default function HomePage() {
             {/* Text */}
             <div>
               <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-primary-900 leading-tight mb-5">
-                Expert Care for<br />
-                Every <span className="text-crimson-600">Heart</span>beat
+                Cardiologist in Jaipur -<br />
+                Dr. Raghvendra <span className="text-crimson-600">Choudhary</span>
               </h1>
               <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-md mb-8">
                 Comprehensive cardiac care from Dr. Raghvendra Choudhary — 25+ years
@@ -264,7 +264,7 @@ export default function HomePage() {
                 </div>
                 <p className="text-sm text-primary-100 leading-relaxed mb-4 italic">"{t.text}"</p>
                 <div className="text-sm font-semibold">{t.name}</div>
-                <div className="text-xs text-primary-300">{t.condition} · {t.location}</div>
+                <div className="text-xs text-primary-300">{t.source}</div>
               </div>
             ))}
           </div>
