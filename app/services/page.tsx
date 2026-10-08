@@ -16,8 +16,8 @@ export default function ServicesPage() {
         <div className="section-container">
           <h1 className="text-3xl md:text-5xl font-bold text-primary-900 mb-3">Cardiac Services</h1>
           <p className="text-gray-600 max-w-xl text-sm md:text-base leading-relaxed">
-            Advanced diagnostics and interventions — from a single centre in Jaipur,
-            by the most experienced cardiac hands in Rajasthan.
+            Cardiology consultations, diagnostic tests and treatment planning in Jaipur.
+            Call the doctor to arrange angioplasty.
           </p>
         </div>
       </section>
