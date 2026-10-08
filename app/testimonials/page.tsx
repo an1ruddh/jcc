@@ -39,9 +39,8 @@ export default function TestimonialsPage() {
                     {t.name[0]}
                   </div>
                   <div>
-                    <div className="font-semibold text-sm text-primary-900">{t.name}, {t.age}</div>
-                    <div className="text-xs text-gray-500">{t.condition}</div>
-                    <div className="text-xs text-gray-400">{t.location} · {t.date}</div>
+                    <div className="font-semibold text-sm text-primary-900">{t.name}</div>
+                    <div className="text-xs text-gray-400">{t.source}</div>
                   </div>
                 </div>
               </div>
