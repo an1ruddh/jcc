@@ -29,7 +29,7 @@ export const services = [
     title: "Coronary Angioplasty (PCI)",
     shortDesc: "Advanced balloon & stent procedures to open blocked arteries.",
     description:
-      "Percutaneous Coronary Intervention (PCI) is a minimally invasive procedure to treat narrowed or blocked coronary arteries. Dr. Choudhary has performed 15,000+ successful angioplasties using latest drug-eluting stents.",
+      "Percutaneous Coronary Intervention (PCI) is a minimally invasive procedure to treat narrowed or blocked coronary arteries. Dr. Choudhary has performed 15,000+ angioplasties. Call the doctor to arrange angioplasty.",
     price: "Contact for Pricing",
     badge: "15,000+ Done",
   },
