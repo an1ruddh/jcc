@@ -60,7 +60,6 @@ export default function ContactPage() {
                   <div>
                     <div className="text-xs text-gray-400 tracking-widest uppercase mb-1">Phone</div>
                     <a href={`tel:${siteConfig.phone1}`} className="block text-sm font-semibold text-primary-900 hover:text-crimson-600 transition-colors">{siteConfig.phone1}</a>
-                    <a href={`tel:${siteConfig.phone2}`} className="block text-sm font-semibold text-primary-900 hover:text-crimson-600 transition-colors">{siteConfig.phone2}</a>
                   </div>
                 </div>
                 <div className="flex gap-3">
