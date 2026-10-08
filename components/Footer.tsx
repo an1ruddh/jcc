@@ -58,7 +58,6 @@ export function Footer() {
                 <Phone size={14} className="text-crimson-400 shrink-0" />
                 <div>
                   <a href={`tel:${siteConfig.phone1}`} className="text-primary-200 hover:text-white block">{siteConfig.phone1}</a>
-                  <a href={`tel:${siteConfig.phone2}`} className="text-primary-200 hover:text-white block">{siteConfig.phone2}</a>
                 </div>
               </li>
               <li className="flex gap-3 items-center">
