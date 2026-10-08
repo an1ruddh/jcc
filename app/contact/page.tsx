@@ -1,37 +1,7 @@
-"use client";
-import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const validate = () => {
-    const e: Record<string, string> = {};
-    if (!form.name.trim()) e.name = "Name is required";
-    if (!form.phone.trim()) e.phone = "Phone number is required";
-    else if (!/^[+\d\s-]{8,15}$/.test(form.phone)) e.phone = "Enter a valid phone number";
-    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email";
-    if (!form.message.trim()) e.message = "Please describe your concern";
-    return e;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
-  };
-
-  const inputClass = (err?: string) =>
-    `w-full border rounded-lg px-4 py-3 text-sm outline-none transition-colors focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${err ? "border-red-400 bg-red-50" : "border-gray-300 bg-white"}`;
-
   return (
     <div className="bg-white">
       {/* Header */}
@@ -39,8 +9,8 @@ export default function ContactPage() {
         <div className="section-container">
           <h1 className="text-3xl md:text-5xl font-bold text-primary-900 mb-3">Get in Touch</h1>
           <p className="text-gray-600 max-w-xl text-sm md:text-base leading-relaxed">
-            Book an appointment or send a message. We respond within a few hours on working days.
-            For emergencies, call directly.
+            Call or WhatsApp to book an appointment.
+            Call the doctor to arrange angioplasty.
           </p>
         </div>
       </section>
@@ -107,88 +77,28 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-semibold text-green-800 text-sm">Chat on WhatsApp</div>
-                <div className="text-xs text-green-600">Instant response for bookings</div>
+                <div className="text-xs text-green-600">Message us to book an appointment</div>
               </div>
             </a>
           </div>
 
-          {/* Form */}
+          {/* Booking options */}
           <div className="lg:col-span-2 order-1 lg:order-2">
             <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
-              {submitted ? (
-                <div className="text-center py-10">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                    <CheckCircle size={32} className="text-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-primary-900 mb-3">Message Sent!</h2>
-                  <p className="text-gray-600 mb-6 max-w-sm mx-auto">
-                    Thank you for reaching out. We will contact you within a few hours to confirm your appointment.
-                  </p>
-                  <a href={`tel:${siteConfig.phone1}`}
-                    className="inline-flex items-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors">
-                    <Phone size={15} /> {siteConfig.phone1}
-                  </a>
-                </div>
-              ) : (
-                <>
-                  <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-1">Book an Appointment</h2>
-                  <p className="text-gray-500 text-sm mb-6">Fill in your details and we'll get back to you promptly.</p>
-                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">Full Name *</label>
-                        <input id="name" type="text" placeholder="e.g. Ramesh Sharma"
-                          value={form.name}
-                          onChange={(e) => { setForm({ ...form, name: e.target.value }); setErrors({ ...errors, name: "" }); }}
-                          className={inputClass(errors.name)}
-                        />
-                        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number *</label>
-                        <input id="phone" type="tel" placeholder="+91 XXXXX XXXXX"
-                          value={form.phone}
-                          onChange={(e) => { setForm({ ...form, phone: e.target.value }); setErrors({ ...errors, phone: "" }); }}
-                          className={inputClass(errors.phone)}
-                        />
-                        {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email Address (optional)</label>
-                      <input id="email" type="email" placeholder="you@example.com"
-                        value={form.email}
-                        onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors({ ...errors, email: "" }); }}
-                        className={inputClass(errors.email)}
-                      />
-                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">Your Concern *</label>
-                      <textarea id="message" rows={5}
-                        placeholder="Briefly describe your symptoms or what you'd like to consult about..."
-                        value={form.message}
-                        onChange={(e) => { setForm({ ...form, message: e.target.value }); setErrors({ ...errors, message: "" }); }}
-                        className={`${inputClass(errors.message)} resize-none`}
-                      />
-                      {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
-                    </div>
-
-                    <button type="submit" disabled={loading}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
-                      {loading
-                        ? <><span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Sending...</>
-                        : <><Send size={16} /> Send Message</>}
-                    </button>
-
-                    <p className="text-xs text-gray-400 text-center">
-                      For emergencies, call immediately: <a href={`tel:${siteConfig.phone1}`} className="text-crimson-600 font-medium">{siteConfig.phone1}</a>
-                    </p>
-                  </form>
-                </>
-              )}
+              <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">Call or WhatsApp to book</h2>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                Contact Jaipur Cardiac Centre on {siteConfig.phone1} to request an appointment.
+                Your appointment is confirmed when the clinic confirms the date and time.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href={`tel:${siteConfig.phone1}`} className="inline-flex items-center justify-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors">
+                  <Phone size={16} /> Call to book
+                </a>
+                <a href="https://wa.me/918107667788?text=Hello+Dr.+Raghvendra%2C+I+would+like+to+book+an+appointment." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors">
+                  WhatsApp to book
+                </a>
+              </div>
+              <p className="text-sm text-gray-500 mt-6">Call the doctor to arrange angioplasty.</p>
             </div>
           </div>
         </div>
