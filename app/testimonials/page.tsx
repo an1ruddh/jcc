@@ -4,7 +4,7 @@ import { Star, ArrowRight } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Patient Testimonials | Jaipur Cardiac Centre",
+  title: "Patient Testimonials",
   description: "Real patient stories from Jaipur Cardiac Centre. Angioplasty, pacemaker, heart failure — read how Dr. Raghvendra Choudhary changed their lives.",
   alternates: { canonical: "https://jaipurcardiaccentre.com/testimonials" },
 };
