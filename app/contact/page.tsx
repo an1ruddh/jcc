@@ -208,7 +208,7 @@ export default function ContactPage() {
             </a>
           </div>
           <iframe title="Jaipur Cardiac Centre — Google Maps"
-            src="https://www.google.com/maps?q=52+Janak+Marg+Hanuman+Nagar+Extension+Khatipura+Jaipur+Rajasthan+302012&output=embed&z=15"
+            src="https://www.google.com/maps?q=52+Janak+Marg+Hanuman+Nagar+Extension+Jaipur+Rajasthan+302012&output=embed&z=15"
             width="100%" height="360" style={{ border: 0 }} allowFullScreen loading="lazy"
             referrerPolicy="no-referrer-when-downgrade" />
         </div>
