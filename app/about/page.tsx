@@ -4,7 +4,7 @@ import { doctorProfile, siteConfig } from "@/lib/data";
 import Image from "next/image";
 export const metadata: Metadata = {
   title: "Dr. Raghvendra Choudhary – DM Cardiology | About",
-  description: "Dr. Raghvendra Choudhary — DM Cardiology, SMS Medical College. 25+ years, 15,000+ cases, 10,000+ angioplasties. Rajasthan's top interventional cardiologist.",
+  description: "Dr. Raghvendra Choudhary — DM Cardiology, SMS Medical College. 25+ years, 15,000+ cases, 15,000+ angioplasties. Rajasthan's top interventional cardiologist.",
   alternates: { canonical: "https://jaipurcardiaccentre.com/about" },
 };
 
