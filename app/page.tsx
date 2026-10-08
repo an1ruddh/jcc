@@ -39,57 +39,9 @@ const lifestyleColors: Record<string, { bg: string; border: string; icon: string
   orange: { bg: "bg-orange-50", border: "border-orange-100", icon: "text-orange-600 bg-orange-100", check: "text-orange-600" },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What heart conditions does Dr. Raghvendra Choudhary treat?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Dr. Choudhary treats all types of cardiac conditions including coronary artery disease, heart failure, arrhythmias, hypertension, valvular heart disease, and high cholesterol. He has successfully managed 15,000+ cardiac cases.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I know if my chest pain is heart-related or just gas?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Heart-related chest pain often feels like pressure, squeezing, or tightness that may radiate to the arm, jaw, or back. It can be accompanied by shortness of breath, cold sweats, or nausea. Gas pain is typically sharp, localized, and relieved by passing gas or burping. If you're unsure, always seek emergency care — many heart attack survivors initially mistook their symptoms for acidity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What should I expect during my first visit to Jaipur Cardiac Centre?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Your first visit includes a thorough consultation, review of medical history, and necessary diagnostic tests such as ECG or echocardiography. Dr. Choudhary takes time to explain your condition and treatment options in simple language. The clinic is equipped with advanced diagnostics for accurate, same-day assessment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you handle emergency cardiac cases?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, we handle cardiac emergencies including heart attacks, unstable angina, and acute heart failure. For emergencies, call +91 8107667788 immediately. Dr. Choudhary has performed over 15,000 emergency angioplasties with outstanding outcomes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I book an appointment with Dr. Raghvendra Choudhary?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You can book by calling +91 8107667788, sending a message through the contact form on this website, or chatting via WhatsApp. We respond within a few hours on working days.",
-      },
-    },
-  ],
-};
-
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="bg-white">
 
       {/* ── HERO ── */}
