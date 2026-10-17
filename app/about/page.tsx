@@ -135,6 +135,63 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Training, recognition and publications */}
+      <section className="bg-primary-50">
+        <div className="section-container py-12 md:py-16 space-y-12">
+          <div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-crimson-600 mb-3">Training and Recognition</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-6">Certificates, workshops and awards</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <figure>
+                <Image src="/credentials/25-conference-certificates.jpg" alt="Framed conference participation certificates of Dr. Raghvendra Choudhary" width={1000} height={750} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Conference and CME participation certificates</figcaption>
+              </figure>
+              <figure>
+                <Image src="/credentials/14-t.jpg" alt="Medtronic MEDSTEP and St Jude Medical workshop certificates of Dr. Raghvendra Choudhary" width={1022} height={277} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Interventional cardiology training and workshop certificates</figcaption>
+              </figure>
+              <figure>
+                <Image src="/credentials/26-awards-desk.jpg" alt="Awards and plaques received by Dr. Raghvendra Choudhary" width={1000} height={750} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Awards and plaques</figcaption>
+              </figure>
+              <figure>
+                <Image src="/credentials/27-awards-plaques.jpg" alt="Conclave plaque and recognition awards of Dr. Raghvendra Choudhary" width={1000} height={750} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Conclave plaque and recognition awards</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-crimson-600 mb-3">In Practice</p>
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+              <figure>
+                <Image src="/credentials/31-consult.jpg" alt="Dr. Raghvendra Choudhary during a consultation" width={720} height={1125} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Dr. Raghvendra Choudhary at the clinic</figcaption>
+              </figure>
+              <figure>
+                <Image src="/credentials/29-cath-lab-team.jpg" alt="Cath lab team with Dr. Raghvendra Choudhary" width={1000} height={882} className="w-full h-auto rounded-xl shadow-md" />
+                <figcaption className="text-xs text-gray-500 mt-2">Cath lab team</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-crimson-600 mb-3">Publications</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-6">Selected research</h2>
+            <ul className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <li className="bg-white rounded-xl border border-gray-200 p-5">
+                Choudhary R, Batra A, Malik V, Mahajan K. All four coronary arteries arising separately from the right aortic sinus of Valsalva: rare anomaly. <em>BMJ Case Reports</em> 2019;12(4):e229498.{" "}
+                <a href="https://doi.org/10.1136/bcr-2019-229498" target="_blank" rel="noopener noreferrer" className="text-crimson-600 font-medium underline">doi:10.1136/bcr-2019-229498</a>
+              </li>
+              <li className="bg-white rounded-xl border border-gray-200 p-5">
+                Choudhary R, Maheshwari D, Rijhwani P, Rathore M. Cardiac mechanics in patients with systemic hypertension with normal EF: a speckle-strain imaging study. <em>Journal of Hypertension and Cardiology</em> 2013.{" "}
+                <a href="https://doi.org/10.14302/issn.2329-9487.jhc-13-272" target="_blank" rel="noopener noreferrer" className="text-crimson-600 font-medium underline">doi:10.14302/issn.2329-9487.jhc-13-272</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
