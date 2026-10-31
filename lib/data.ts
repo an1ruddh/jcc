@@ -44,6 +44,17 @@ export const services = [
     badge: "Gold Standard",
   },
   {
+    id: "ecg",
+    icon: "Activity",
+    title: "ECG (Electrocardiogram)",
+    shortDesc: "Quick recording of the heart's electrical activity.",
+    description:
+      "A quick, painless ECG records the heart's rate and rhythm and can indicate heart muscle damage, medicine or pacemaker effects, and chamber size. Done at the clinic.",
+    price: "Contact for Pricing",
+    badge: "Quick Test",
+    link: "/services/ecg-test",
+  },
+  {
     id: "echocardiography",
     icon: "Waves",
     title: "Echocardiography",
@@ -52,6 +63,7 @@ export const services = [
       "2D/3D Echo and Doppler studies to assess heart valves, pumping function, and structural abnormalities. Available as routine, stress echo and transesophageal echo (TEE).",
     price: "₹1,500 – ₹4,000",
     badge: "Non-invasive",
+    link: "/services/2d-echo",
   },
   {
     id: "stress-testing",
@@ -62,6 +74,7 @@ export const services = [
       "Treadmill stress testing (TMT) identifies exercise-induced cardiac abnormalities, making it essential for diagnosing stable angina and evaluating treatment efficacy.",
     price: "₹1,200 – ₹2,000",
     badge: "Preventive",
+    link: "/services/tmt-test",
   },
   {
     id: "holter-monitoring",
@@ -72,6 +85,7 @@ export const services = [
       "Continuous ECG recording worn by the patient for 24–72 hours to capture intermittent palpitations, arrhythmias and conduction disturbances not seen on a resting ECG.",
     price: "₹2,000 – ₹3,500",
     badge: "Ambulatory",
+    link: "/services/holter-monitoring",
   },
   {
     id: "pacemaker",
