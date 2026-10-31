@@ -32,6 +32,11 @@ export default function ServicesPage() {
                 <span className="text-[11px] font-semibold text-crimson-600 bg-crimson-50 px-2 py-1 rounded shrink-0">{s.badge}</span>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">{s.description}</p>
+              {"link" in s && s.link && (
+                <a href={s.link as string} className="text-sm text-crimson-600 font-medium hover:text-crimson-700 transition-colors mb-3">
+                  About this test &rarr;
+                </a>
+              )}
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <span className="text-sm font-semibold text-primary-800">{s.price}</span>
                 <a href={`tel:${siteConfig.phone1}`}
