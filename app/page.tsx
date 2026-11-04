@@ -121,6 +121,13 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
+            <p className="mt-6 text-sm text-gray-600">
+              Detailed test guides:{" "}
+              <Link href="/services/ecg-test" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">ECG</Link>,{" "}
+              <Link href="/services/2d-echo" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">2D Echo</Link>,{" "}
+              <Link href="/services/tmt-test" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">TMT</Link>,{" "}
+              <Link href="/services/holter-monitoring" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">Holter monitoring</Link>
+            </p>
           </div>
 
           {/* Treatments */}
