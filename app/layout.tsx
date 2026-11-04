@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} | Dr. Raghvendra Choudhary – Cardiologist Jaipur`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: "Best cardiologist in Jaipur. Dr. Raghvendra Choudhary – DM Cardiology, 25+ years, 15,000+ cardiac cases, 15,000+ angioplasties. Book: +91 8107667788.",
-  keywords: ["cardiologist jaipur", "best cardiologist jaipur", "Dr Raghvendra Choudhary", "heart doctor jaipur", "angioplasty jaipur", "cardiac centre jaipur", "heart specialist rajasthan"],
+  description: "Dr. Raghvendra Choudhary – DM Cardiology, 25+ years, 15,000+ cardiac cases, 15,000+ angioplasties. Book: +91 8107667788.",
+  keywords: ["cardiologist jaipur", "Dr Raghvendra Choudhary", "heart doctor jaipur", "angioplasty jaipur", "cardiac centre jaipur", "heart specialist rajasthan"],
   authors: [{ name: "Dr. Raghvendra Choudhary" }],
   openGraph: {
     type: "website", locale: "en_IN",
