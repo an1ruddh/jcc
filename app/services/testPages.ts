@@ -17,7 +17,7 @@ export const testPages: TestPage[] = [
   {
     slug: "ecg-test",
     title: "ECG Test in Jaipur (Electrocardiogram)",
-    metaTitle: "ECG Test in Jaipur | Jaipur Cardiac Centre, Hanuman Nagar",
+    metaTitle: "ECG Test in Hanuman Nagar, Jaipur",
     metaDescription:
       "ECG (electrocardiogram) test done at Jaipur Cardiac Centre, Hanuman Nagar, Jaipur. Quick, painless recording of the heart's electrical activity. Open 9 am to 6 pm, all days. Call +91 8107667788.",
     intro:
@@ -45,7 +45,7 @@ export const testPages: TestPage[] = [
   {
     slug: "2d-echo",
     title: "2D Echocardiography in Jaipur (2D Echo)",
-    metaTitle: "2D Echo Test in Jaipur | Jaipur Cardiac Centre, Hanuman Nagar",
+    metaTitle: "2D Echo Test in Hanuman Nagar, Jaipur",
     metaDescription:
       "2D echocardiography (ultrasound of the heart) with Doppler, done at Jaipur Cardiac Centre, Hanuman Nagar, Jaipur. Open 9 am to 6 pm, all days. Call +91 8107667788.",
     intro:
@@ -70,7 +70,7 @@ export const testPages: TestPage[] = [
   {
     slug: "tmt-test",
     title: "TMT Test in Jaipur (Treadmill Stress Test)",
-    metaTitle: "TMT (Treadmill Test) in Jaipur | Jaipur Cardiac Centre, Hanuman Nagar",
+    metaTitle: "TMT (Treadmill Test) in Hanuman Nagar, Jaipur",
     metaDescription:
       "Treadmill stress test (TMT) done at Jaipur Cardiac Centre, Hanuman Nagar, Jaipur. ECG and blood pressure monitored during exercise. Open 9 am to 6 pm, all days. Call +91 8107667788.",
     intro:
@@ -96,7 +96,7 @@ export const testPages: TestPage[] = [
   {
     slug: "holter-monitoring",
     title: "Holter Monitoring in Jaipur",
-    metaTitle: "Holter Monitoring in Jaipur | Jaipur Cardiac Centre, Hanuman Nagar",
+    metaTitle: "Holter Monitoring in Hanuman Nagar, Jaipur",
     metaDescription:
       "Holter monitoring (continuous ECG, usually 24 to 48 hours) fitted at Jaipur Cardiac Centre, Hanuman Nagar, Jaipur. Open 9 am to 6 pm, all days. Call +91 8107667788.",
     intro:
