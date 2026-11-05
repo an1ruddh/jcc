@@ -24,8 +24,19 @@ export default function TestPage({ params }: { params: { slug: string } }) {
   if (!page) notFound();
   const others = testPages.filter((t) => t.slug !== page.slug);
 
+  const testLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: page.metaTitle,
+    description: page.metaDescription,
+    url: `https://jaipurcardiaccentre.com/services/${page.slug}`,
+    about: { "@type": "MedicalTest", name: page.title.split(" in ")[0] },
+    provider: { "@id": "https://jaipurcardiaccentre.com/#business" },
+  };
+
   return (
     <div className="bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(testLd) }} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-50 via-primary-100 to-primary-50 py-12 md:py-16">
         <div className="section-container">
@@ -123,4 +134,4 @@ export default function TestPage({ params }: { params: { slug: string } }) {
       </section>
     </div>
   );
-  }
+}
