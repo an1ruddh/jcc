@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Jaipur Cardiac Centre | Dr. Raghvendra Choudhary",
     description: "DM Cardiology specialist with 25+ years experience and 15,000+ successful angioplasties.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/doctor-photo.jpg", width: 1254, height: 1254 }],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
@@ -44,6 +44,8 @@ const structuredData = {
         postalCode: "302012",
         addressCountry: "IN",
       },
+      geo: { "@type": "GeoCoordinates", latitude: 26.9305709, longitude: 75.7404435 },
+      hasMap: "https://www.google.com/maps?cid=1943939774242178238",
       medicalSpecialty: "Cardiology",
       openingHoursSpecification: [
         { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "09:00", closes: "18:00" },
@@ -51,7 +53,7 @@ const structuredData = {
       priceRange: "₹₹",
       image: "https://jaipurcardiaccentre.com/doctor-photo.jpg",
       sameAs: [
-        "https://www.google.com/maps?cid=11922698404612867460",
+        "https://www.google.com/maps?cid=1943939774242178238",
       ],
     },
     {
