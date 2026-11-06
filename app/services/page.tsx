@@ -16,8 +16,8 @@ export default function ServicesPage() {
         <div className="section-container">
           <h1 className="text-3xl md:text-5xl font-bold text-primary-900 mb-3">Cardiac Services</h1>
           <p className="text-gray-600 max-w-xl text-sm md:text-base leading-relaxed">
-            Cardiology consultations, diagnostic tests and treatment planning in Jaipur.
-            Call the doctor to arrange angioplasty.
+            Cardiology consultations, diagnostic tests and treatment planning at our
+            clinic in Hanuman Nagar Extension, Jaipur. Call the doctor to arrange angioplasty.
           </p>
         </div>
       </section>
