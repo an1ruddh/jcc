@@ -71,6 +71,15 @@ export default function BlogPostPage({ params }: Props) {
             );
           })}
 
+          {"relatedLink" in post && post.relatedLink && (
+            <p className="text-sm text-gray-600 mb-10">
+              Related:{" "}
+              <Link href={(post.relatedLink as { href: string; label: string }).href} className="text-crimson-600 font-medium underline underline-offset-2 hover:text-crimson-700">
+                {(post.relatedLink as { href: string; label: string }).label}
+              </Link>
+            </p>
+          )}
+
           {/* CTA */}
           <div className="mt-12 bg-primary-50 rounded-2xl p-6 md:p-7 border border-primary-100">
             <p className="text-xs font-semibold tracking-widest uppercase text-crimson-600 mb-3">Consult the Expert</p>
