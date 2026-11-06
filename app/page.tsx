@@ -18,6 +18,40 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
 };
 
+
+const faqs = [
+  {
+    q: "Where is Jaipur Cardiac Centre located?",
+    a: "Jaipur Cardiac Centre is at 52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan 302012.",
+  },
+  {
+    q: "What are the clinic timings?",
+    a: "The clinic is open from 9:00 AM to 6:00 PM, all seven days of the week.",
+  },
+  {
+    q: "How do I book an appointment?",
+    a: "Call or WhatsApp +91 8107667788 to request an appointment. Your appointment is confirmed when the clinic confirms the date and time.",
+  },
+  {
+    q: "Which heart tests are done at the clinic?",
+    a: "ECG, 2D echocardiography, treadmill test (TMT) and Holter monitoring are done at the clinic. Detailed guides for each test are on our services pages.",
+  },
+  {
+    q: "What should I do during a heart emergency?",
+    a: "Call 112 immediately or go to the nearest emergency department. Do not wait to book a routine appointment.",
+  },
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const conditionIcons: Record<string, React.ReactNode> = {
   HeartPulse: <HeartPulse size={32} className="text-crimson-600" />,
   HeartCrack: <HeartCrack size={32} className="text-crimson-600" />,
@@ -42,6 +76,7 @@ const lifestyleColors: Record<string, { bg: string; border: string; icon: string
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="bg-white">
 
       {/* ── HERO ── */}
@@ -75,7 +110,7 @@ export default function HomePage() {
             <div className="relative max-w-md mx-auto">
               <Image
                 src="/doctor-photo.jpg"
-                alt="Dr. Raghvendra Choudhary"
+                alt="Dr. Raghvendra Choudhary, cardiologist at Jaipur Cardiac Centre, Hanuman Nagar, Jaipur"
                 width={600}
                 height={700}
                 className="w-full h-auto rounded-2xl"
@@ -232,6 +267,30 @@ export default function HomePage() {
               Read All Stories <ArrowRight size={15} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-gray-50 py-16">
+        <div className="section-container">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((f) => (
+              <div key={f.q} className="bg-white rounded-2xl border border-gray-200 p-6">
+                <h3 className="font-bold text-primary-900 mb-2">{f.q}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-8">
+            Read our detailed test guides:{" "}
+            <Link href="/services/ecg-test" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">ECG</Link>,{" "}
+            <Link href="/services/2d-echo" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">2D Echo</Link>,{" "}
+            <Link href="/services/tmt-test" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">TMT</Link>,{" "}
+            <Link href="/services/holter-monitoring" className="text-primary-700 underline underline-offset-2 hover:text-primary-900">Holter monitoring</Link>
+          </p>
         </div>
       </section>
 
