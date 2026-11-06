@@ -110,7 +110,7 @@ export default function ContactPage() {
               <h3 className="font-semibold text-primary-900">Find Us</h3>
               <p className="text-sm text-gray-500">{siteConfig.address}</p>
             </div>
-            <a href="https://www.google.com/maps?cid=11922698404612867460"
+            <a href="https://www.google.com/maps?cid=1943939774242178238"
               target="_blank" rel="noopener noreferrer"
               className="text-sm font-medium text-crimson-600 hover:text-crimson-700 whitespace-nowrap">
               Open in Maps →
