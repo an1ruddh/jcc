@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     description: "DM Cardiology specialist with 25+ years experience and 15,000+ successful angioplasties.",
     images: [{ url: "/doctor-photo.jpg", width: 1254, height: 1254 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jaipur Cardiac Centre | Dr. Raghvendra Choudhary",
+    description: "DM Cardiology specialist with 25+ years experience and 15,000+ successful angioplasties.",
+    images: ["/doctor-photo.jpg"],
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://jaipurcardiaccentre.com" },
 };
