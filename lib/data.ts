@@ -168,6 +168,7 @@ export const testimonials = [
 export const blogPosts = [
   {
     id: "warning-signs-heart-attack",
+    relatedLink: { href: "/services/ecg-test", label: "ECG test at the clinic" },
     title: "10 Warning Signs of a Heart Attack You Should Never Ignore",
     excerpt:
       "Many people survive heart attacks because they recognised the signs early. Learn the classic and subtle symptoms that demand immediate medical attention.",
@@ -178,6 +179,7 @@ export const blogPosts = [
   },
   {
     id: "angioplasty-vs-bypass",
+    relatedLink: { href: "/services", label: "Angiography and angioplasty at the clinic" },
     title: "Angioplasty vs Bypass Surgery: Which is Right for You?",
     excerpt:
       "Both procedures treat blocked coronary arteries but differ in approach, recovery and outcomes. Dr. Choudhary explains how the decision is made.",
@@ -188,6 +190,7 @@ export const blogPosts = [
   },
   {
     id: "cholesterol-heart-disease",
+    relatedLink: { href: "/services", label: "Preventive cardiology at the clinic" },
     title: "Cholesterol and Heart Disease: What Your Numbers Actually Mean",
     excerpt:
       "Not all cholesterol is harmful. Understanding LDL, HDL and triglycerides can help you take control of your cardiac risk before it becomes a crisis.",
@@ -198,6 +201,7 @@ export const blogPosts = [
   },
   {
     id: "hypertension-silent-killer",
+    relatedLink: { href: "/services", label: "Heart tests and services at the clinic" },
     title: "Hypertension: The Silent Killer Living in Your Heart",
     excerpt:
       "High blood pressure often has no symptoms until it causes a stroke or heart attack. Here's everything you need to know about detecting and controlling it.",
@@ -208,6 +212,7 @@ export const blogPosts = [
   },
   {
     id: "young-heart-attacks-india",
+    relatedLink: { href: "/services/tmt-test", label: "TMT (treadmill test) at the clinic" },
     title: "Why Are Young Indians Having More Heart Attacks?",
     excerpt:
       "India is seeing a surge in heart attacks among people aged 25–45. Dr. Choudhary discusses the alarming trend and what young professionals can do.",
